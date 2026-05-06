@@ -13,6 +13,7 @@ const movies = [
 
 function App() {
   const [genre, setGenre] = useState('');
+  const [filteredMovies, setFilteredMovies] = useState(movies);
   return(
     <>
     <h1>MOVIES LIST</h1>
@@ -29,7 +30,7 @@ function App() {
     </select>
     <p>Genere selezionato: {genre}</p>
     <ul>
-      {movies.map((movie, index) => {
+      {filteredMovies.map((movie, index) => {
         return <li key={index} >{movie.title} {movie.genre}</li>
       })}
     </ul>
