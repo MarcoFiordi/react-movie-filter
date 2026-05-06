@@ -16,6 +16,18 @@ function App() {
   return(
     <>
     <h1>MOVIES LIST</h1>
+    <select value={genre}
+    onChange={(event) => {
+      setGenre(event.target.value);
+    }}
+    >
+      <option value="">Tutti i generi</option>
+      <option value="Fantascienza">Fantascienza</option>
+      <option value="Thriller">Thriller</option>
+      <option value="Romantico">Romantico</option>
+      <option value="Azione">Azione</option>
+    </select>
+    <p>Genere selezionato: {genre}</p>
     <ul>
       {movies.map((movie, index) => {
         return <li key={index} >{movie.title} {movie.genre}</li>
