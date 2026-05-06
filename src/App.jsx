@@ -14,6 +14,18 @@ const movies = [
 function App() {
   const [genre, setGenre] = useState('');
   const [filteredMovies, setFilteredMovies] = useState(movies);
+  useEffect(() => {
+  if (genre === ''){
+    setFilteredMovies(movies);
+  } else {
+    const filtered = movies.filter((movie) =>{
+      return movie.genre === genre;
+    });
+
+    setFilteredMovies(filtered);
+  }
+  
+  }, [genre]);
   return(
     <>
     <h1>MOVIES LIST</h1>
